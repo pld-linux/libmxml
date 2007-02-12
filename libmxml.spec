@@ -1,5 +1,5 @@
 Summary:	Minimal XML library
-Summary(pl):	Minimalna biblioteka XML
+Summary(pl.UTF-8):   Minimalna biblioteka XML
 Name:		libmxml
 Version:	0.9.1
 Release:	1
@@ -17,32 +17,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Minimal XML is a library meant for extrememly fast and non-validating
 xml parsing.
 
-%description -l pl
-Minimal XML jest bibliotek± z przeznaczeniem do ekstremalnie szybkiego
-i niewaliduj±cego parsowania xml.
+%description -l pl.UTF-8
+Minimal XML jest bibliotekÄ… z przeznaczeniem do ekstremalnie szybkiego
+i niewalidujÄ…cego parsowania xml.
 
 %package devel
 Summary:	Header files for libmxml
-Summary(pl):	Pliki nag³ówkowe dla libmxml
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe dla libmxml
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libmxml.
 
-%description devel -l pl
-Pliki nag³ówkowe dla libmxml.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe dla libmxml.
 
 %package static
 Summary:	Static libmxml library
-Summary(pl):	Statyczna biblioteka libmxml
+Summary(pl.UTF-8):   Statyczna biblioteka libmxml
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libmxml library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libmxml.
 
 %prep
