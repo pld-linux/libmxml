@@ -1,5 +1,5 @@
 Summary:	Minimal XML library
-Summary(pl.UTF-8):   Minimalna biblioteka XML
+Summary(pl.UTF-8):	Minimalna biblioteka XML
 Name:		libmxml
 Version:	0.9.1
 Release:	1
@@ -23,7 +23,7 @@ i niewalidującego parsowania xml.
 
 %package devel
 Summary:	Header files for libmxml
-Summary(pl.UTF-8):   Pliki nagłówkowe dla libmxml
+Summary(pl.UTF-8):	Pliki nagłówkowe dla libmxml
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -35,7 +35,7 @@ Pliki nagłówkowe dla libmxml.
 
 %package static
 Summary:	Static libmxml library
-Summary(pl.UTF-8):   Statyczna biblioteka libmxml
+Summary(pl.UTF-8):	Statyczna biblioteka libmxml
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
