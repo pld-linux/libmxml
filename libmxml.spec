@@ -19,11 +19,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Minimal XML is a library meant for extrememly fast and non-validating
-xml parsing.
+XML parsing.
 
 %description -l pl.UTF-8
-Minimal XML jest biblioteką z przeznaczeniem do ekstremalnie szybkiego
-i niewalidującego parsowania xml.
+Minimal XML jest biblioteką z przeznaczeniem do ekstremalnie szybkiej
+analizy XML bez kontroli poprawności.
 
 %package devel
 Summary:	Header files for libmxml
