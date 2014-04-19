@@ -1,12 +1,16 @@
+# NOTE:
+# - for C++ continuation of _this_ libmxml, see libmxmlplus.spec
+# - for another libmxml (mxml pkgconfig package), see mxml.spec
 Summary:	Minimal XML library
 Summary(pl.UTF-8):	Minimalna biblioteka XML
 Name:		libmxml
 Version:	0.9.1
 Release:	1
-License:	GPL
+License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/mxml/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/mxml/%{name}-%{version}.tar.gz
 # Source0-md5:	1e166b6cec4b0843eeaf19b86a23d9d1
+Patch0:		%{name}-ac.patch
 URL:		http://mxml.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -47,21 +51,18 @@ Statyczna biblioteka libmxml.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-sed -i -e "s:\"-O2\":\$OPTFLAGS:" configure.in
-
 %{__libtoolize}
 %{__aclocal}
+%{__autoconf}
 %{__autoheader}
 %{__automake}
-%{__autoconf}
 %configure \
-	--enable-docs \
 	--enable-shared
 
-%{__make} \
-	OPTFLAGS="%{rpmcflags}"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -72,17 +73,23 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS
+%doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_libdir}/libmxml.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmxml.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/*.la
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libmxml.so
+%{_libdir}/libmxml.la
+%{_includedir}/mxml.h
+%{_includedir}/mxml_defs.h
+%{_includedir}/mxml_file.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/*.a
+%{_libdir}/libmxml.a
